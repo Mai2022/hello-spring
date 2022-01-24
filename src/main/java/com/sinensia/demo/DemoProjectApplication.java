@@ -22,4 +22,5 @@ public class DemoProjectApplication {
 	@GetMapping("/")
 	public String nothing(@RequestParam(value = "name", defaultValue = "team") String name) {
 	return String.format("Good morning %s!", name);
+	}
 }
