@@ -1,0 +1,565 @@
+gftadmin@ubuntu:~$ cd hello-spring/
+gftadmin@ubuntu:~/hello-spring$ ls
+demo
+gftadmin@ubuntu:~/hello-spring$ cd demo/
+gftadmin@ubuntu:~/hello-spring/demo$ ls
+build.gradle  gradle  gradlew  gradlew.bat  HELP.md  settings.gradle  src
+gftadmin@ubuntu:~/hello-spring/demo$ 
+gftadmin@ubuntu:~/hello-spring/demo$ 
+gftadmin@ubuntu:~/hello-spring/demo$ 
+gftadmin@ubuntu:~/hello-spring/demo$ cd ..
+gftadmin@ubuntu:~/.local/share/Trash/files$ cd
+gftadmin@ubuntu:~$ ls
+Desktop    git-katas                 Music        Pictures   snap       Videos
+Documents  hello-spring              optimize.sh  portainer  Templates
+Downloads  linux-agent-installer.sh  pagina-web   Public     tsclient
+gftadmin@ubuntu:~$ cd hello-spring/
+gftadmin@ubuntu:~/hello-spring$ ls
+build.gradle  gradle  gradlew  gradlew.bat  HELP.md  settings.gradle  src
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ls -la
+total 40
+drwxrwxr-x  4 gftadmin gftadmin 4096 Jan 24 11:55 .
+drwxr-xr-x 31 gftadmin gftadmin 4096 Jan 24 11:53 ..
+-rw-r--r--  1 gftadmin gftadmin  447 Jan 24 10:46 build.gradle
+drwxr-xr-x  3 gftadmin gftadmin 4096 Jan 24 10:46 gradle
+-rwxr-xr-x  1 gftadmin gftadmin 8070 Jan 24 10:46 gradlew
+-rw-r--r--  1 gftadmin gftadmin 2763 Jan 24 10:46 gradlew.bat
+-rw-r--r--  1 gftadmin gftadmin 1036 Jan 24 10:46 HELP.md
+-rw-r--r--  1 gftadmin gftadmin   26 Jan 24 10:46 settings.gradle
+drwxr-xr-x  4 gftadmin gftadmin 4096 Jan 24 10:46 src
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ cat build.gradle 
+plugins {
+	id 'org.springframework.boot' version '2.6.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.sinensia'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ls .
+build.gradle  gradle  gradlew  gradlew.bat  HELP.md  settings.gradle  src
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ls -lah
+total 40K
+drwxrwxr-x  4 gftadmin gftadmin 4.0K Jan 24 11:55 .
+drwxr-xr-x 31 gftadmin gftadmin 4.0K Jan 24 11:53 ..
+-rw-r--r--  1 gftadmin gftadmin  447 Jan 24 10:46 build.gradle
+drwxr-xr-x  3 gftadmin gftadmin 4.0K Jan 24 10:46 gradle
+-rwxr-xr-x  1 gftadmin gftadmin 7.9K Jan 24 10:46 gradlew
+-rw-r--r--  1 gftadmin gftadmin 2.7K Jan 24 10:46 gradlew.bat
+-rw-r--r--  1 gftadmin gftadmin 1.1K Jan 24 10:46 HELP.md
+-rw-r--r--  1 gftadmin gftadmin   26 Jan 24 10:46 settings.gradle
+drwxr-xr-x  4 gftadmin gftadmin 4.0K Jan 24 10:46 src
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/gftadmin/hello-spring/.git/
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git config --global init.defaultBranch main
+gftadmin@ubuntu:~/hello-spring$ git branch -m main
+gftadmin@ubuntu:~/hello-spring$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	HELP.md
+	build.gradle
+	gradle/
+	gradlew
+	gradlew.bat
+	settings.gradle
+	src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git add .
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   HELP.md
+	new file:   build.gradle
+	new file:   gradle/wrapper/gradle-wrapper.jar
+	new file:   gradle/wrapper/gradle-wrapper.properties
+	new file:   gradlew
+	new file:   gradlew.bat
+	new file:   settings.gradle
+	new file:   src/main/java/com/sinensia/demo/DemoProjectApplication.java
+	new file:   src/main/resources/application.properties
+	new file:   src/test/java/com/sinensia/demo/DemoProjectApplicationTests.java
+
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git commit -m 'Initial commit'
+[main (root-commit) 033667e] Initial commit
+ 10 files changed, 400 insertions(+)
+ create mode 100644 HELP.md
+ create mode 100644 build.gradle
+ create mode 100644 gradle/wrapper/gradle-wrapper.jar
+ create mode 100644 gradle/wrapper/gradle-wrapper.properties
+ create mode 100755 gradlew
+ create mode 100644 gradlew.bat
+ create mode 100644 settings.gradle
+ create mode 100644 src/main/java/com/sinensia/demo/DemoProjectApplication.java
+ create mode 100644 src/main/resources/application.properties
+ create mode 100644 src/test/java/com/sinensia/demo/DemoProjectApplicationTests.java
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git status 
+On branch main
+nothing to commit, working tree clean
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ls -lrtga
+total 44
+drwxr-xr-x  4 gftadmin 4096 Jan 24 10:46 src
+-rw-r--r--  1 gftadmin   26 Jan 24 10:46 settings.gradle
+-rw-r--r--  1 gftadmin 1036 Jan 24 10:46 HELP.md
+-rw-r--r--  1 gftadmin 2763 Jan 24 10:46 gradlew.bat
+-rwxr-xr-x  1 gftadmin 8070 Jan 24 10:46 gradlew
+drwxr-xr-x  3 gftadmin 4096 Jan 24 10:46 gradle
+-rw-r--r--  1 gftadmin  447 Jan 24 10:46 build.gradle
+drwxrwxr-x  5 gftadmin 4096 Jan 24 11:59 .
+drwxr-xr-x 31 gftadmin 4096 Jan 24 12:01 ..
+drwxrwxr-x  8 gftadmin 4096 Jan 24 12:08 .git
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ cd src/main/java/com/example/demo
+bash: cd: src/main/java/com/example/demo: No such file or directory
+gftadmin@ubuntu:~/hello-spring$ cd src/main/java/com/example
+bash: cd: src/main/java/com/example: No such file or directory
+gftadmin@ubuntu:~/hello-spring$ cd /src/main/java/com/example
+bash: cd: /src/main/java/com/example: No such file or directory
+gftadmin@ubuntu:~/hello-spring$ cd /src/main/java/com/
+bash: cd: /src/main/java/com/: No such file or directory
+gftadmin@ubuntu:~/hello-spring$ cd src/main/java/com/
+gftadmin@ubuntu:~/hello-spring/src/main/java/com$ ls
+sinensia
+gftadmin@ubuntu:~/hello-spring/src/main/java/com$ cd sinensia/
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia$ la
+demo
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia$ cd demo/
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ ls
+DemoProjectApplication.java
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ ls -latsh
+total 12K
+4.0K drwxr-xr-x 2 gftadmin gftadmin 4.0K Jan 24 10:46 .
+4.0K drwxr-xr-x 3 gftadmin gftadmin 4.0K Jan 24 10:46 ..
+4.0K -rw-r--r-- 1 gftadmin gftadmin  320 Jan 24 10:46 DemoProjectApplication.java
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ 
+gftadmin@ubuntu:~/hello-spring/src/main/java/com/sinensia/demo$ cd
+gftadmin@ubuntu:~$ cd hello-spring/
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ls -laths
+total 52K
+4.0K drwxrwxr-x  4 gftadmin gftadmin 4.0K Jan 24 12:30 bin
+4.0K drwxrwxr-x  7 gftadmin gftadmin 4.0K Jan 24 12:30 .
+4.0K drwxrwxr-x  5 gftadmin gftadmin 4.0K Jan 24 12:28 .gradle
+4.0K drwxr-xr-x 32 gftadmin gftadmin 4.0K Jan 24 12:26 ..
+4.0K drwxrwxr-x  8 gftadmin gftadmin 4.0K Jan 24 12:08 .git
+4.0K -rw-r--r--  1 gftadmin gftadmin  447 Jan 24 10:46 build.gradle
+4.0K drwxr-xr-x  3 gftadmin gftadmin 4.0K Jan 24 10:46 gradle
+8.0K -rwxr-xr-x  1 gftadmin gftadmin 7.9K Jan 24 10:46 gradlew
+4.0K -rw-r--r--  1 gftadmin gftadmin 2.7K Jan 24 10:46 gradlew.bat
+4.0K -rw-r--r--  1 gftadmin gftadmin 1.1K Jan 24 10:46 HELP.md
+4.0K -rw-r--r--  1 gftadmin gftadmin   26 Jan 24 10:46 settings.gradle
+4.0K drwxr-xr-x  4 gftadmin gftadmin 4.0K Jan 24 10:46 src
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ echo $PATH
+/home/gftadmin/bin:/home/gftadmin/.local/bin:/opt/gradle-6.7.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ./gradlew
+
+Welcome to Gradle 7.3.3!
+
+Here are the highlights of this release:
+ - Easily declare new test suites in Java projects
+ - Support for Java 17
+ - Support for Scala 3
+
+For more details see https://docs.gradle.org/7.3.3/release-notes.html
+
+Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
+
+> Task :help
+
+Welcome to Gradle 7.3.3.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see more detail about a task, run gradlew help --task <task>
+
+To see a list of command-line options, run gradlew --help
+
+For more detail on using Gradle, see https://docs.gradle.org/7.3.3/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 20s
+1 actionable task: 1 executed
+gftadmin@ubuntu:~/hello-spring$ cd gradle/
+gftadmin@ubuntu:~/hello-spring/gradle$ la -laths
+total 12K
+4.0K drwxrwxr-x 7 gftadmin gftadmin 4.0K Jan 24 12:30 ..
+4.0K drwxr-xr-x 3 gftadmin gftadmin 4.0K Jan 24 10:46 .
+4.0K drwxr-xr-x 2 gftadmin gftadmin 4.0K Jan 24 10:46 wrapper
+gftadmin@ubuntu:~/hello-spring/gradle$ cd ..
+gftadmin@ubuntu:~/hello-spring$ tree
+.
+├── bin
+│   ├── main
+│   │   ├── application.properties
+│   │   ├── com
+│   │   │   └── sinensia
+│   │   │       └── demo
+│   │   │           └── DemoProjectApplication.class
+│   │   └── templates
+│   └── test
+│       └── com
+│           └── sinensia
+│               └── demo
+│                   └── DemoProjectApplicationTests.class
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── sinensia
+    │   │           └── demo
+    │   │               └── DemoProjectApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── sinensia
+                    └── demo
+                        └── DemoProjectApplicationTests.java
+
+26 directories, 13 files
+gftadmin@ubuntu:~/hello-spring$ ls ./gradle/
+wrapper
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ tree
+.
+├── bin
+│   ├── main
+│   │   ├── application.properties
+│   │   ├── com
+│   │   │   └── sinensia
+│   │   │       └── demo
+│   │   │           └── DemoProjectApplication.class
+│   │   └── templates
+│   └── test
+│       └── com
+│           └── sinensia
+│               └── demo
+│                   └── DemoProjectApplicationTests.class
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── HELP.md
+├── settings.gradle
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── sinensia
+    │   │           └── demo
+    │   │               └── DemoProjectApplication.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── sinensia
+                    └── demo
+                        └── DemoProjectApplicationTests.java
+
+26 directories, 13 files
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2022-01-24 13:05:20.891  INFO 99895 --- [           main] c.sinensia.demo.DemoProjectApplication   : Starting DemoProjectApplication using Java 11.0.13 on ubuntu with PID 99895 (/home/gftadmin/hello-spring/build/classes/java/main started by gftadmin in /home/gftadmin/hello-spring)
+2022-01-24 13:05:20.895  INFO 99895 --- [           main] c.sinensia.demo.DemoProjectApplication   : No active profile set, falling back to default profiles: default
+2022-01-24 13:05:22.456  INFO 99895 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-24 13:05:22.471  INFO 99895 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-24 13:05:22.472  INFO 99895 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-24 13:05:22.615  INFO 99895 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-24 13:05:22.616  INFO 99895 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1586 ms
+2022-01-24 13:05:23.281  INFO 99895 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-24 13:05:23.300  INFO 99895 --- [           main] c.sinensia.demo.DemoProjectApplication   : Started DemoProjectApplication in 3.083 seconds (JVM running for 3.876)
+<==========---> 80% EXECUTING [9m 59s]
+> :bootRun
+^Cgftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ ./gradlew bootRun
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2022-01-24 13:16:15.212  INFO 100264 --- [           main] c.sinensia.demo.DemoProjectApplication   : Starting DemoProjectApplication using Java 11.0.13 on ubuntu with PID 100264 (/home/gftadmin/hello-spring/build/classes/java/main started by gftadmin in /home/gftadmin/hello-spring)
+2022-01-24 13:16:15.215  INFO 100264 --- [           main] c.sinensia.demo.DemoProjectApplication   : No active profile set, falling back to default profiles: default
+2022-01-24 13:16:16.617  INFO 100264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-01-24 13:16:16.628  INFO 100264 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-01-24 13:16:16.629  INFO 100264 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-24 13:16:16.738  INFO 100264 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-01-24 13:16:16.739  INFO 100264 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1382 ms
+2022-01-24 13:16:17.395  INFO 100264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-01-24 13:16:17.412  INFO 100264 --- [           main] c.sinensia.demo.DemoProjectApplication   : Started DemoProjectApplication in 3.227 seconds (JVM running for 4.026)
+2022-01-24 13:16:51.997  INFO 100264 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-24 13:16:51.998  INFO 100264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-01-24 13:16:52.000  INFO 100264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+<==========---> 80% EXECUTING [16m 11s]
+> :bootRun
+^Cgftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main/java/com/sinensia/demo/DemoProjectApplication.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gradle/
+	bin/
+	build/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git diff
+diff --git a/src/main/java/com/sinensia/demo/DemoProjectApplication.java b/src/main/java/com/sinensia/demo/DemoProjectApplication.java
+index 43349fe..c699074 100644
+--- a/src/main/java/com/sinensia/demo/DemoProjectApplication.java
++++ b/src/main/java/com/sinensia/demo/DemoProjectApplication.java
+@@ -2,12 +2,20 @@ package com.sinensia.demo;
+ 
+ import org.springframework.boot.SpringApplication;
+ import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.bind.annotation.RestController;
+ 
+ @SpringBootApplication
++@RestController
+ public class DemoProjectApplication {
+ 
+        public static void main(String[] args) {
+                SpringApplication.run(DemoProjectApplication.class, args);
+        }
+ 
++       @GetMapping("/hello")
++       public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
++               return String.format("Hello %s!", name);
++       }
+ }
+gftadmin@ubuntu:~/hello-spring$ git commit -m 'Adding method hello() mapped to /hello'
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/main/java/com/sinensia/demo/DemoProjectApplication.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gradle/
+	bin/
+	build/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git log
+commit 033667eb1abb05ec395fc76fcb659b00d27be927 (HEAD -> main)
+Author: Mai2022 <maimundi2018@gmail.com>
+Date:   Mon Jan 24 12:07:52 2022 +0100
+
+    Initial commit
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+gftadmin@ubuntu:~/hello-spring$ git remote add origin git@github.com:Mai2022/hello-spring.git
+gftadmin@ubuntu:~/hello-spring$ git branch -M main
+gftadmin@ubuntu:~/hello-spring$ git push -u origin main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (26/26), 59.35 KiB | 3.49 MiB/s, done.
+Total 26 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Mai2022/hello-spring.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ git remote -v show origin
+* remote origin
+  Fetch URL: git@github.com:Mai2022/hello-spring.git
+  Push  URL: git@github.com:Mai2022/hello-spring.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (up to date)
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ 
+gftadmin@ubuntu:~/hello-spring$ pwd
+/home/gftadmin/hello-spring
+gftadmin@ubuntu:~/hello-spring$ nano /home/gftadmin/hello-spring/pruebas1.txt
+
