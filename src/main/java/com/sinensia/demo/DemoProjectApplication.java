@@ -23,4 +23,10 @@ public class DemoProjectApplication {
 	public String nothing(@RequestParam(value = "name", defaultValue = "team") String name) {
 	return String.format("Good morning %s!", name);
 	}
+
+	@GetMapping("/add")
+	public String canAdd(@RequestParam(value = "a", defaultValue = "0") int a,
+		              @RequestParam(value = "b", defaultValue = "0") int b){
+		return String.format("%s", a+b);
+	}
 }
