@@ -1,5 +1,6 @@
 package com.sinensia.demo;
 
+import org.assertj.core.api.AbstractStringAssert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
@@ -19,5 +20,15 @@ class DemoProjectApplicationTests {
 	@Test
 	void rootTest(@Autowired TestRestTemplate restTemplate) {
 		assertThat(restTemplate.getForObject("/", String.class)).isEqualTo("Good morning team!");
+	}
+
+	@Test
+	void helloTestDefault(@Autowired TestRestTemplate restTemplate) {
+		assertThat(restTemplate.getForObject("/hello", String.class)).isEqualTo("Hello World");
+	}
+
+	@Test
+	void helloTestName(@Autowired TestRestTemplate restTemplate) {
+		assertThat(restTemplate.getForObject("/hello?name=Mai", String.class)).isEqualTo("Hello Mai");
 	}
 }
