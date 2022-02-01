@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.processing.Generated;
 
+import java.math.BigDecimal;
+
+import static java.math.RoundingMode.HALF_DOWN;
+
 @SpringBootApplication
 @RestController
 public class DemoProjectApplication {
@@ -68,14 +72,8 @@ public class DemoProjectApplication {
 
 	@GetMapping("/divide")
 	public Object divide(
-			@RequestParam(value="a", defaultValue = "0") Float a,
-			@RequestParam(value="b", defaultValue = "0") Float b
+			@RequestParam(value="a", defaultValue = "0") BigDecimal a,
+			@RequestParam(value="b", defaultValue = "0") BigDecimal b
 	) {
-		Float quotient = a / b;
-		Float decimals = quotient - quotient.intValue();
-		if(decimals!=0) {
-			return quotient;
-		}
-		return Integer.valueOf(quotient.intValue());
-	}
+		return a.divide(b, 2, HALF_DOWN);
 }
