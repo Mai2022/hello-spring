@@ -53,4 +53,29 @@ public class DemoProjectApplication {
 		return Integer.valueOf(product.intValue());
 	}
 
+	@GetMapping("/subtract")
+	public Object subtract(
+			@RequestParam(value="a", defaultValue = "0") Float a,
+			@RequestParam(value="b", defaultValue = "0") Float b
+	) {
+		Float difference = a - b;
+		Float decimals = difference - difference.intValue();
+		if(decimals!=0) {
+			return difference;
+		}
+		return Integer.valueOf(difference.intValue());
+	}
+
+	@GetMapping("/divide")
+	public Object divide(
+			@RequestParam(value="a", defaultValue = "0") Float a,
+			@RequestParam(value="b", defaultValue = "0") Float b
+	) {
+		Float quotient = a / b;
+		Float decimals = quotient - quotient.intValue();
+		if(decimals!=0) {
+			return quotient;
+		}
+		return Integer.valueOf(quotient.intValue());
+	}
 }
