@@ -4,11 +4,20 @@ plugins {
 	id 'java'
 	id 'jacoco'
 	id 'pmd'
+	id 'info.solidsoft.pitest' version '1.7.0'
 }
 
 group = 'com.sinensia'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+ext['junit-jupiter.version'] = '5.5.2'
+
+pitest {
+	junit5PluginVersion = '0.12'
+	outputFormats = ['XML', 'HTML']
+	timestampedReports = false
+}
 
 repositories {
 	mavenCentral()
@@ -35,3 +44,4 @@ pmd {
 	consoleOutput = true
 	ignoreFailures = true
 }
+

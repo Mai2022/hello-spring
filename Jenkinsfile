@@ -12,7 +12,8 @@ pipeline {
                     jacoco execPattern: 'build/jacoco/*.exec'
                     recordIssues(
                         tools: [
-                            pmdParser(pattern: 'build/reports/pmd/*.xml')
+                            pmdParser(pattern: 'build/reports/pmd/*.xml'),
+                            pi(pattern: 'build/reports/pitest/**/mutations.xml')
                         ]
                     )
                 }
