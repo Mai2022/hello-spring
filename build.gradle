@@ -30,3 +30,8 @@ jacocoTestReport {
 		xml.required = true
 	}
 }
+
+pmd {
+	consoleOutput = true
+	ignoreFailures = true
+}
